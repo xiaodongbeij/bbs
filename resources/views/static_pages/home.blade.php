@@ -10,11 +10,7 @@
             一切，将从这里开始。
         </p>
         <p>
-            @if(Auth::user())
-                <a class="btn btn-lg btn-success" href="{{ route('users.show', [Auth::user()]) }}" role="button">{{ Auth::user()->name }}</a>
-            @else
-                <a class="btn btn-lg btn-success" href="{{ route('login') }}" role="button">现在登录</a>
-            @endif
+            <a class="btn btn-lg btn-success" href="{{ route('signup') }}" role="button">现在注册</a>
         </p>
     </div>
 @stop
