@@ -22,7 +22,6 @@ class RedirectIfAuthenticated
             session()->flash('info', '您已经登录过了');
             return redirect(RouteServiceProvider::HOME);
         }
-
         return $next($request);
     }
 }
