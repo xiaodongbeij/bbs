@@ -17,7 +17,7 @@ class UsersController extends Controller
         return view('users.show', compact('user'));
     }
 
-    public function stroe(Request $request)
+    public function store(Request $request)
     {
         $this->validate($request,[
             'name' => 'required|unique:users|max:50',
@@ -25,7 +25,7 @@ class UsersController extends Controller
             'password' => 'required|confirmed|min:6'
         ]);
 
-        User::create($request);
+        return true;
 
 
     }
