@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Statuses;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,9 +28,10 @@ class StatusesController extends Controller
         return redirect()->back();
     }
 
-    public function destroy($statues)
+    public function destroy(Statuses $status)
     {
-        $statues->delete();
+        $this->authorize('destroy', $status);
+        $status->delete();
         session()->flash('success', '删除成功');
         return back();
     }
